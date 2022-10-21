@@ -1,0 +1,33 @@
+<section class="ms-5">
+  <div class="container-fluid mt-5 ms-5 w-25">
+    <h1 class="text-center mb-5">Add Products</h1>
+    <form action="/admin/add-product" method="post" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label  class="form-label">Name</label>
+        <input
+          type="text"
+          name="name"
+          class="form-control"   
+        />
+      <div class="mb-3">
+        <label class="form-label">Category</label>
+        <input type="text" name="Category" class="form-control"  />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input type="text" name="Price" class="form-control"  />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <input type="text" name="description" class="form-control"  />
+      </div>
+<div class=" mb-3">
+      <label >Upload</label>
+  <input type="file" class="form-control" name="image">
+  
+</div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+  </div>
+</section>

@@ -1,0 +1,52 @@
+<section>
+
+  <div class="mt-5 text-center">
+    <h1>USER DATA</h1>
+  </div>
+
+  <div class="container mt-5">
+    <form
+      class="d-flex float-end"
+      action="/admin/search"
+      method="post"
+      role="search"
+    >
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        name="Search"
+      />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <table class="table table-bordered border-primary">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">User</th>
+          <th scope="col">Password</th>
+          <th scope="col">Email</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      {{#each userDetails}}
+        <tbody>
+          <tr>
+            <th scope="row">{{this._id}}</th>
+            <td>{{this.Username}}</td>
+            <td>{{this.Password}}</td>
+            <td>{{this.Email}}</td>
+            <td>
+              <a
+                href="/admin/delete-user/{{this._id}}"
+                class="btn btn-danger"
+                onclick="return confirm('Delete is {{this.Username}} item')"
+              >Delete</a></td>
+          </tr>
+        </tbody>
+      {{/each}}
+    </table>
+  </div>
+
+</section>

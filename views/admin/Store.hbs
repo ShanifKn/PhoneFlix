@@ -1,0 +1,57 @@
+<section class="container-fluid col-8 mt-3 pt-3 mb-5">
+  <div class="row mb-3 float-end">
+    <a href="/admin/add-product" class="btn btn-success ml-auto">Add Item </a>
+  </div>
+
+  <table class="table align-middle mb-0 bg-white table-bordered">
+    <thead class="table-dark text-center">
+      <tr>
+        <th>Items</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    {{#each product}}
+      <tbody>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+
+              <img
+                src="/product-images/{{this._id}}.jpg"
+                style="width: 95px; height: 95px"
+                class="rounded-lg"
+              />
+              <div class="ms-5">
+                <h6 class="fw-bold mb-1">{{this.name}}</h6>
+
+              </div>
+            </div>
+
+          </td>
+          <td>
+            <p class="text-muted mb-0">{{this.description}}</p>
+          </td>
+          <td>
+            <p class="mb-0">{{this.Price}}</p>
+          </td>
+          <td>{{this.Category}}</td>
+          <td>
+            <a
+              href="/admin/edit-product/{{this._id}}"
+              class="btn btn-primary mx-1"
+            >Edit</a>
+            <a
+              href="/admin/delete-product/{{this._id}}"
+              class="btn btn-danger"
+              onclick="return confirm('Delete is {{this.Username}} item')"
+            >Delete</a>
+
+          </td>
+        </tr>
+      </tbody>
+    {{/each}}
+  </table>
+</section>
